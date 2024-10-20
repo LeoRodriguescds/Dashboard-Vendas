@@ -110,7 +110,7 @@ export default function SideBar() {
                   </DropdownMenuTrigger>
                 </TooltipTrigger>
 
-                <DropdownMenuContent className="w-56">
+                <DropdownMenuContent className="w-56 ml-3">
                   <DropdownMenuLabel>Configurações</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuGroup>
@@ -127,7 +127,7 @@ export default function SideBar() {
                   </DropdownMenuGroup>
                   <DropdownMenuSeparator />
                   <DropdownMenuGroup>
-                    <DropdownMenuItem className="flex gap-4 text-red-400">
+                    <DropdownMenuItem className="flex gap-4 text-red-400 hover:bg-red-300">
                       <LogOut className="w-5 h-5" />
                       Logout
                     </DropdownMenuItem>
