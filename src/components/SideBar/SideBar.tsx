@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Rotas } from "../../lib/routes";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import {
@@ -39,7 +40,7 @@ export default function SideBar() {
         <nav className="flex flex-col items-center gap-4 px-2 py-5">
           <TooltipProvider>
             <Link
-              href="#"
+              href={Rotas.dashboard}
               className="flex h-9 w-9 shrink-0 items-center justify-center bg-primary text-primary-foreground rounded-full gap-2"
             >
               <Package className="w-4 h-4" />
@@ -49,7 +50,7 @@ export default function SideBar() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
-                  href="#"
+                  href={Rotas.dashboard}
                   className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground rounded-lg transition-colors hover:text-foreground gap-2"
                 >
                   <Home className="w-5 h-5 transition-all" />
@@ -61,7 +62,7 @@ export default function SideBar() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
-                  href="#"
+                  href={Rotas.pedidos}
                   className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground rounded-lg transition-colors hover:text-foreground gap-2"
                 >
                   <ShoppingCart className="w-5 h-5 transition-all" />
@@ -73,7 +74,7 @@ export default function SideBar() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
-                  href="#"
+                  href={Rotas.produtos}
                   className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground rounded-lg transition-colors hover:text-foreground gap-2"
                 >
                   <Boxes className="w-5 h-5 transition-all" />
@@ -85,7 +86,7 @@ export default function SideBar() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
-                  href="#"
+                  href={Rotas.clientes}
                   className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground rounded-lg transition-colors hover:text-foreground gap-2"
                 >
                   <Users className="w-5 h-5 transition-all" />
@@ -154,7 +155,7 @@ export default function SideBar() {
             <SheetContent side="left" className="sm:max-w-xs">
               <nav className="grid gap-6 text-lg font-medium">
                 <Link
-                  href="#"
+                  href={Rotas.dashboard}
                   className="flex h-10 w-10 bg-primary rounded-full text-lg items-center justify-center text-primary-foreground md:text-base gap-2"
                   prefetch={false}
                 >
@@ -163,7 +164,7 @@ export default function SideBar() {
                 </Link>
 
                 <Link
-                  href="#"
+                  href={Rotas.dashboard}
                   className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground hover:bg-slate-200 hover:transition-all hover:rounded-full h-10"
                   prefetch={false}
                 >
@@ -171,7 +172,7 @@ export default function SideBar() {
                   Início
                 </Link>
                 <Link
-                  href="#"
+                  href={Rotas.pedidos}
                   className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground hover:bg-slate-200 hover:transition-all hover:rounded-full h-10"
                   prefetch={false}
                 >
@@ -179,7 +180,7 @@ export default function SideBar() {
                   Pedidos
                 </Link>
                 <Link
-                  href="#"
+                  href={Rotas.produtos}
                   className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground hover:bg-slate-200 hover:transition-all hover:rounded-full h-10"
                   prefetch={false}
                 >
@@ -187,7 +188,7 @@ export default function SideBar() {
                   Produtos
                 </Link>
                 <Link
-                  href="#"
+                  href={Rotas.clientes}
                   className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground hover:bg-slate-200 hover:transition-all hover:rounded-full h-10"
                   prefetch={false}
                 >
