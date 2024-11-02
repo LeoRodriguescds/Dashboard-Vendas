@@ -3,6 +3,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { JetBrains_Mono } from "next/font/google";
 import SideBar from "@/components/SideBar/SideBar";
+import { ThemeProvider } from "@/lib/theme-provider";
 
 const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
@@ -17,15 +18,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialised",
           jetBrainsMono.className
         )}
       >
-        <SideBar />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SideBar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

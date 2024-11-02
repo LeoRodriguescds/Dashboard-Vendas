@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Rotas } from "../../lib/routes";
 import { Button } from "../ui/button";
@@ -31,8 +33,11 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
+import { useTheme } from "next-themes";
 
 export default function SideBar() {
+  const { setTheme } = useTheme();
+
   return (
     <div className="flex flex-col w-full bg-muted/40">
       {/* DESKTOP */}
@@ -119,9 +124,15 @@ export default function SideBar() {
                       <DropdownMenuSubTrigger>Tema</DropdownMenuSubTrigger>
                       <DropdownMenuPortal>
                         <DropdownMenuSubContent>
-                          <DropdownMenuItem>Light</DropdownMenuItem>
-                          <DropdownMenuItem>Dark</DropdownMenuItem>
-                          <DropdownMenuItem>System</DropdownMenuItem>
+                          <DropdownMenuItem onClick={() => setTheme("light")}>
+                            Light
+                          </DropdownMenuItem>
+                          <DropdownMenuItem onClick={() => setTheme("dark")}>
+                            Dark
+                          </DropdownMenuItem>
+                          <DropdownMenuItem onClick={() => setTheme("system")}>
+                            System
+                          </DropdownMenuItem>
                         </DropdownMenuSubContent>
                       </DropdownMenuPortal>
                     </DropdownMenuSub>
